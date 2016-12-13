@@ -1,1 +1,0 @@
-json.partial! 'movies/attributes', movie: @movie

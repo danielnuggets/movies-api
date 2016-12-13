@@ -1,4 +1,4 @@
-class MoviesController < ApplicationController
+class Api::V2::MoviesController < ApplicationController
   def index
     @movies = Movie.all
     render 'index.json.jbuilder'
