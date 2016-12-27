@@ -1,0 +1,25 @@
+<h1>Movies</h1>
+
+<div ng-app="app">
+<div ng-controller="moviesCtrl" ng-init="getData()">
+  <div ng-repeat="movie in movies">
+    <h2>{{ movie.title }}</h2>
+    <p>Description: {{ movie.description }}</p>
+    <p>Duration: {{ movie.duration }}</p>
+    <p>Genre: {{ movie.genre }}</p>
+    <h4 ng-click="toggleVisible($index)">Cast: </h4>
+    <div ng-repeat="actor in movie.actors">
+      <p ng-class="{hidden: movie.hideCast}">{{ actor.name }}</p>
+    </div>
+    <hr>
+  </div>
+
+  <h4>Add Movie</h4>
+  <div>Title: <input ng-model="title"></div>
+  <div>Duration: <input ng-model="duration"></div>
+  <div>Genre: <input ng-model="genre"></div>
+  <div>Description: <input ng-model="description"></div>
+  <button ng-click="addMovieToDatabase(title, duration, genre, description)">Add Movie To Database</button>
+
+</div>
+</div>
